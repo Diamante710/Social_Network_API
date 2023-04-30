@@ -10,6 +10,7 @@
 
 ## <a name="Task"></a>Task
 
+The task at hand is to build an API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list. It will use Express.js for routing, a MongoDB database, and the Mongoose ODM.
 
 ## <a name="User Story"></a>User Story
 
