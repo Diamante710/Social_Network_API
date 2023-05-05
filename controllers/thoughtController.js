@@ -13,7 +13,7 @@ module.exports = {
 
   async getThoughtById(req, res) {
     try {
-      const thought = await Thought.findOne({ _id: req.params.ThoughtId }).select('-__v');
+      const thought = await Thought.findOne({ _id: req.params.thoughtId }).select('-__v');
 
       if (!thought) {
         return res.status(404).json({ message: 'No thought with that ID' });
@@ -57,7 +57,7 @@ module.exports = {
       const thought = await Thought.findOneAndDelete({ _id: req.params.thoughtId });
 
       if (!thought) {
-        res.status(404).json({ message: 'Though not deleted' });
+        res.status(404).json({ message: 'Thought not deleted' });
       }
     }
       catch (err) {

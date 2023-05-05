@@ -12,7 +12,7 @@ const userSchema = new Schema(
             type: String,
             required: true,
             unique: true,
-            match: []
+            match: [/.+@.+\..+/]
         },
         thoughts: [
             {
@@ -20,7 +20,6 @@ const userSchema = new Schema(
                 ref: "thought",
             },
         ],
-
         friends: [
             {
                 type: Schema.Types.ObjectId,
@@ -32,14 +31,13 @@ const userSchema = new Schema(
         toJSON: {
             virtuals: true,
         },
-        id: false,
+            id: false,
     }
 );
 
 userSchema.virtual('friendCount').get(function () {
     return this.friends.length;
-  });
-
+});
 
 const User = model("user", userSchema);
 
