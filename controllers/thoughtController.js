@@ -59,6 +59,7 @@ module.exports = {
       if (!thought) {
         res.status(404).json({ message: 'Thought not deleted' });
       }
+      res.json(thought);
     }
       catch (err) {
       res.status(500).json(err);
